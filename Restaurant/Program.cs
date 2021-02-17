@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Restaurant.Clients;
 using Restaurant.Menu;
+using Restaurant.Order;
 
 namespace Restaurant
 {
@@ -8,12 +10,19 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
-            var menu = SingletonMenu.Create();
+            List<IMenu> menu = SingletonMenu.Create();
+            Restaurant restaurant = new Restaurant(10, menu);
 
-            foreach (var item in menu)
+            ClientRestaurant c = new Client();
+
+            ClientOrder co = c.PlaceAnOrder(menu);
+
+            foreach (var item in co.OrderedItems)
             {
-                Console.WriteLine($"Name: {item.ItemName} - {item.Price} zł");
+                Console.WriteLine($"{item.ItemName} {item.Price}");
             }
+            
+            restaurant.Display();
         }
     }
 }

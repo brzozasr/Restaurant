@@ -7,11 +7,6 @@ namespace Restaurant.Clients
 {
     public class Client : ClientRestaurant
     {
-        public override ClientOrder PlaceAnOrder(IEnumerable<IMenu> menu)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public override void Buy(double price)
         {
             AmountOfMany -= price;
@@ -19,7 +14,7 @@ namespace Restaurant.Clients
 
         public override void CountTime(int elapsedMin)
         {
-            TimeInRestaurantInMin -= elapsedMin;
+            LeftTimeInRestaurantInMin -= elapsedMin;
         }
 
         public override void SetTablePosition(int x, int y)

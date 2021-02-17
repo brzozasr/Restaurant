@@ -9,12 +9,7 @@ namespace Restaurant.Clients
     {
         public VipClient()
         {
-            AmountOfMany = Utilities.Utility.Random.DoubleGenerator(300.0, 600.0);
-        }
-
-        public override ClientOrder PlaceAnOrder(IEnumerable<IMenu> menu)
-        {
-            throw new System.NotImplementedException();
+            AmountOfMany = Utilities.Utility.Random.DoubleGenerator(151.0, 300.0);
         }
 
         public override void Buy(double price)
@@ -24,7 +19,7 @@ namespace Restaurant.Clients
 
         public override void CountTime(int elapsedMin)
         {
-            TimeInRestaurantInMin -= elapsedMin;
+            LeftTimeInRestaurantInMin -= elapsedMin;
         }
 
         public override void SetTablePosition(int x, int y)

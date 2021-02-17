@@ -5,6 +5,6 @@ namespace Restaurant.Order
 {
     public class ClientOrder
     {
-        public List<IMenu> orderedItems { get; set; }
+        public List<IMenu> OrderedItems { get; set; } = new List<IMenu>();
     }
 }
