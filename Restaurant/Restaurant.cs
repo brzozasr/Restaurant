@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using Restaurant.Client;
+using System.Text;
+using Restaurant.Clients;
 using Restaurant.Menu;
 
 namespace Restaurant
@@ -17,6 +18,13 @@ namespace Restaurant
         {
             Width = width;
             Menu = menu;
+        }
+
+        public void Display()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            Client[,] test = new Client[Width, Width];
         }
     }
 }

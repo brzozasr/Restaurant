@@ -1,6 +1,7 @@
 using System;
+using Restaurant.Menu;
 
-namespace Restaurant.Menu
+namespace Restaurant.Utilities
 {
     public static class MenuPrice
     {

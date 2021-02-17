@@ -1,4 +1,5 @@
 using System;
+using Restaurant.Utilities;
 
 namespace Restaurant.Menu
 {
@@ -8,7 +9,7 @@ namespace Restaurant.Menu
         {
             int pizzaCount = Enum.GetNames(typeof(PizzaType)).Length;
 
-            int pizzaNo = Utilities.Random.Next(0, pizzaCount);
+            int pizzaNo = Utilities.Utility.Random.Next(0, pizzaCount);
             
             switch (pizzaNo)
             {
@@ -39,7 +40,7 @@ namespace Restaurant.Menu
         {
             int burgerCount = Enum.GetNames(typeof(BurgerType)).Length;
 
-            int burgerNo = Utilities.Random.Next(0, burgerCount);
+            int burgerNo = Utilities.Utility.Random.Next(0, burgerCount);
 
             switch (burgerNo)
             {
@@ -67,7 +68,7 @@ namespace Restaurant.Menu
         {
             int pastaCount = Enum.GetNames(typeof(PastaType)).Length;
 
-            int pastaNo = Utilities.Random.Next(0, pastaCount);
+            int pastaNo = Utilities.Utility.Random.Next(0, pastaCount);
 
             switch (pastaNo)
             {
@@ -95,7 +96,7 @@ namespace Restaurant.Menu
         {
             int saladCount = Enum.GetNames(typeof(SaladType)).Length;
 
-            int saladNo = Utilities.Random.Next(0, saladCount);
+            int saladNo = Utilities.Utility.Random.Next(0, saladCount);
 
             switch (saladNo)
             {
@@ -123,7 +124,7 @@ namespace Restaurant.Menu
         {
             int beverageCount = Enum.GetNames(typeof(BeverageType)).Length;
 
-            int beverageNo = Utilities.Random.Next(0, beverageCount);
+            int beverageNo = Utilities.Utility.Random.Next(0, beverageCount);
 
             switch (beverageNo)
             {

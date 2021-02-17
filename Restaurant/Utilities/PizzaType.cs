@@ -1,4 +1,4 @@
-namespace Restaurant.Menu
+namespace Restaurant.Utilities
 {
     public enum PizzaType
     {

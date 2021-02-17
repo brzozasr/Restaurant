@@ -1,8 +1,8 @@
 using System;
 
-namespace Restaurant
+namespace Restaurant.Utilities
 {
-    public static class Utilities
+    public static class Utility
     {
         public static Random Random => new Random();
         

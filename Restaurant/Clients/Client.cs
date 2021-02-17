@@ -1,16 +1,12 @@
 using System.Collections.Generic;
 using Restaurant.Menu;
 using Restaurant.Order;
+using Restaurant.Utilities;
 
-namespace Restaurant.Client
+namespace Restaurant.Clients
 {
-    public class VipClient : ClientRestaurant
+    public class Client : ClientRestaurant
     {
-        public VipClient()
-        {
-            AmountOfMany = Utilities.Random.DoubleGenerator(300.0, 600.0);
-        }
-
         public override ClientOrder PlaceAnOrder(IEnumerable<IMenu> menu)
         {
             throw new System.NotImplementedException();
@@ -24,6 +20,11 @@ namespace Restaurant.Client
         public override void CountTime(int elapsedMin)
         {
             TimeInRestaurantInMin -= elapsedMin;
+        }
+
+        public override void SetTablePosition(int x, int y)
+        {
+            Position = new TablePosition(x, y);
         }
     }
 }

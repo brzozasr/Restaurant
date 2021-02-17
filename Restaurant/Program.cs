@@ -1,5 +1,5 @@
 ﻿using System;
-using Restaurant.Client;
+using Restaurant.Clients;
 using Restaurant.Menu;
 
 namespace Restaurant
