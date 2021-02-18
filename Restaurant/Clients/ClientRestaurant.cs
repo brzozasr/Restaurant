@@ -11,12 +11,12 @@ namespace Restaurant.Clients
     {
         public double AmountOfMany { get; protected set; }
         public int LeftTimeInRestaurantInMin { get; protected set; }
-        public TablePosition Position { get; protected set; }
+        public TablePosition? Position { get; protected set; }
 
         public ClientRestaurant()
         {
-            AmountOfMany = Utility.Random.DoubleGenerator(50.0, 150.0);
-            LeftTimeInRestaurantInMin = Utility.Random.Next(15, 61);
+            AmountOfMany = Utility.Random.DoubleGenerator(50.0, 70.0);
+            LeftTimeInRestaurantInMin = Utility.Random.Next(20, 91);
         }
         
         public abstract void Buy(double price);
@@ -24,6 +24,8 @@ namespace Restaurant.Clients
         public abstract void CountTime(int elapsedMin);
 
         public abstract void SetTablePosition(int x, int y);
+
+        public abstract void LeaveRestaurant();
 
         public ClientOrder PlaceAnOrder(List<IMenu> menu)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Restaurant.Menu;
 using Restaurant.Order;
@@ -5,11 +6,11 @@ using Restaurant.Utilities;
 
 namespace Restaurant.Clients
 {
-    public class VipClient : ClientRestaurant
+    public class VipClient : ClientRestaurant, IDisposable
     {
         public VipClient()
         {
-            AmountOfMany = Utilities.Utility.Random.DoubleGenerator(151.0, 300.0);
+            AmountOfMany = Utilities.Utility.Random.DoubleGenerator(71.0, 140.0);
         }
 
         public override void Buy(double price)
@@ -25,6 +26,31 @@ namespace Restaurant.Clients
         public override void SetTablePosition(int x, int y)
         {
             Position = new TablePosition(x, y);
+        }
+
+        public override void LeaveRestaurant()
+        {
+            if (LeftTimeInRestaurantInMin <= 0)
+            {
+                Position = null;
+                Dispose();
+            }
+        }
+
+        ~VipClient()
+        {
+            ReleaseUnmanagedResources();
+        }
+
+        private void ReleaseUnmanagedResources()
+        {
+            // TODO release unmanaged resources here
+        }
+
+        public void Dispose()
+        {
+            ReleaseUnmanagedResources();
+            GC.SuppressFinalize(this);
         }
     }
 }

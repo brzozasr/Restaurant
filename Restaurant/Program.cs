@@ -11,18 +11,20 @@ namespace Restaurant
         static void Main(string[] args)
         {
             List<IMenu> menu = SingletonMenu.Create();
-            Restaurant restaurant = new Restaurant(10, menu);
-
-            ClientRestaurant c = new Client();
-
-            ClientOrder co = c.PlaceAnOrder(menu);
-
-            foreach (var item in co.OrderedItems)
-            {
-                Console.WriteLine($"{item.ItemName} {item.Price}");
-            }
+            Restaurant restaurant = new Restaurant(9, menu);
             
-            restaurant.Display();
+            while (true)
+            {
+                Console.Clear();
+                restaurant.Update();
+                Console.WriteLine($"Client waiting in queue: {restaurant.ClientsQueue.Count}");
+                Console.WriteLine($"Restaurant income: {restaurant.Income:0.00}");
+                Console.WriteLine($"Number of clients served: {restaurant.NoClientsServed}");
+                Console.WriteLine($"Average amount spent by the client: {restaurant.Income / restaurant.NoClientsServed:0.00}");
+                restaurant.Display();
+                Console.Write(restaurant.CurrentClientsOrders);
+                Console.ReadKey();
+            }
         }
     }
 }
