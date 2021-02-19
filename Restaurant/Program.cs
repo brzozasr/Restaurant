@@ -17,7 +17,7 @@ namespace Restaurant
             {
                 Console.Clear();
                 restaurant.Update();
-                Console.WriteLine($"Client waiting in queue: {restaurant.ClientsQueue.Count}");
+                Console.WriteLine($"Clients waiting in queue: {restaurant.ClientsQueue.Count}");
                 Console.WriteLine($"Restaurant income: {restaurant.Income:0.00}");
                 Console.WriteLine($"Number of clients served: {restaurant.NoClientsServed}");
                 Console.WriteLine($"Average amount spent by the client: {restaurant.Income / restaurant.NoClientsServed:0.00}");
